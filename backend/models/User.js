@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     university: { type: String },
     address: { type: String },
-});
+    category: { type: String, enum: ['applicant', 'recruiter'], required: true },
+    bio: { type: String, maxlength: 250 },
+    phone: { type: String, String },
+    resume: { type: String }
+}, { timestamps: true });
 
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();

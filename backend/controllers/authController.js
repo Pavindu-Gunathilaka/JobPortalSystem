@@ -8,14 +8,37 @@ const generateToken = (id) => {
 };
 
 const registerUser = async (req, res) => {
-    const { name, email, password } = req.body;
     try {
+        
+        console.log('File:', req.file);
+        console.log('Body:', req.body);
+
+        const { category, name, email, password, bio, phone } = req.body;
+
         const userExists = await User.findOne({ email });
         if (userExists) return res.status(400).json({ message: 'User already exists' });
 
-        const user = await User.create({ name, email, password });
-        res.status(201).json({ id: user.id, name: user.name, email: user.email, token: generateToken(user.id) });
+        const user = await User.create({ 
+            category,
+            name, 
+            email, 
+            password,
+            bio: category === 'recruiter' ? bio : null,
+            phone: category === 'applicant' ? phone : null,
+            resume: category === 'applicant' ? req.file?.buffer.toString('base64') : null
+         });
+        res.status(201).json({ 
+            id: user.id, 
+            name: user.name, 
+            email: user.email, 
+            category: user.category,
+            bio: user.bio,
+            phone: user.phone,
+            resume: user.resume,
+            token: generateToken(user.id) 
+        });
     } catch (error) {
+        console.error('Error registering user:', error);
         res.status(500).json({ message: error.message });
     }
 };
