@@ -1,17 +1,35 @@
 {
-  "name": "task-manager",
+  "name": "job-portal-system",
   "version": "1.0.0",
-  "description": "Complete MERN Task Manager Application",
+  "description": "Complete MERN Job Portal System",
   "scripts": {
     "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend",
     "start": "concurrently \"npm run prod --prefix backend\" \"npm start --prefix frontend\"",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "chai": "^5.1.2",
     "concurrently": "^7.0.0",
     "mocha": "^11.0.1"
   },
-  "author": "Task Manager Team",
-  "license": "ISC"
+  "author": "Job Portal System Team",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/lab": "^6.0.0-beta.31",
+    "@mui/material": "^6.4.8",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bcrypt": "^5.1.1",
+    "libphonenumber-js": "^1.12.6",
+    "multer": "^1.4.5-lts.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  }
 }
