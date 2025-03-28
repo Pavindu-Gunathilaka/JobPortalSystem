@@ -15,11 +15,18 @@
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+<<<<<<< HEAD
     "express": "^4.21.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.14",
     "request": "^2.88.2",
     "task-manager": "file:.."
+=======
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.14",
+    "request": "^2.88.2"
+>>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
   },
   "devDependencies": {
     "esm": "^3.2.25",

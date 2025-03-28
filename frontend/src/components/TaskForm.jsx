@@ -41,7 +41,11 @@ const TaskForm = ({ tasks, setTasks, editingTask, setEditingTask }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded mb-6">
+<<<<<<< HEAD
       <h1 className="text-2xl font-bold mb-4">{editingTask ? 'Edit Task' : 'Add Task'}</h1>
+=======
+      <h1 className="text-2xl font-bold mb-4">{editingTask ? 'Your Form Name: Edit Operation' : 'Your Form Name: Create Operation'}</h1>
+>>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
       <input
         type="text"
         placeholder="Title"
@@ -63,7 +67,11 @@ const TaskForm = ({ tasks, setTasks, editingTask, setEditingTask }) => {
         className="w-full mb-4 p-2 border rounded"
       />
       <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
+<<<<<<< HEAD
         {editingTask ? 'Update Task' : 'Add Task'}
+=======
+        {editingTask ? 'Update Button' : 'Create Button'}
+>>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
       </button>
     </form>
   );

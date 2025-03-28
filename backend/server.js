@@ -12,7 +12,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth', require('./routes/authRoutes'));
+<<<<<<< HEAD
 app.use('/api/tasks', require('./routes/taskRoutes'));
+=======
+//app.use('/api/tasks', require('./routes/taskRoutes'));
+>>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
 
 // Export the app object for testing
 if (require.main === module) {

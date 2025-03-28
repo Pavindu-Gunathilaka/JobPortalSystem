@@ -12,11 +12,19 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+<<<<<<< HEAD
       <Link to="/" className="text-2xl font-bold">Task Manager</Link>
       <div>
         {user ? (
           <>
             <Link to="/tasks" className="mr-4">Tasks</Link>
+=======
+      <Link to="/" className="text-2xl font-bold">Your apps name</Link>
+      <div>
+        {user ? (
+          <>
+            <Link to="/tasks" className="mr-4">CRUD</Link>
+>>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
             <Link to="/profile" className="mr-4">Profile</Link>
             <button
               onClick={handleLogout}
