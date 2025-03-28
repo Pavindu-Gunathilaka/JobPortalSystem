@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import axiosInstance from '../axiosConfig';
 
 const Login = () => {
@@ -12,8 +12,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
+      
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data));
+      
       login(response.data);
-      navigate('/tasks');
+      navigate('/add-jobs');
     } catch (error) {
       alert('Login failed. Please try again.');
     }
