@@ -8,10 +8,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
     "task-manager": "file:..",
-=======
->>>>>>> 6acaafe9b9fc5f71347a09db32b43a6f1f423e99
     "web-vitals": "^2.1.4"
   },
   "scripts": {
