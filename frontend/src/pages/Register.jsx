@@ -3,17 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 
 const Register = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '', role: 'applicant' }); // Default role is 'applicant'
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.post('/api/auth/register', formData);
-      alert('Registration successful. Please log in.');
-      navigate('/login');
+      const response = await axiosInstance.post('/api/auth/register', formData);
+      console.log('Register Response:', response);
+      alert('Registration successful');
+      navigate('/login');  // Redirect to login page after successful registration
     } catch (error) {
-      alert('Registration failed. Please try again.');
+      alert('Registration failed. Please check your details.');
+      console.error('Register Error:', error.response ? error.response.data : error.message); // Log the error for debugging
     }
   };
 
@@ -42,7 +44,18 @@ const Register = () => {
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-        <button type="submit" className="w-full bg-green-600 text-white p-2 rounded">
+        <div className="mb-4">
+          <label className="block">Role</label>
+          <select
+            value={formData.role}
+            onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+            className="w-full p-2 border rounded"
+          >
+            <option value="applicant">Applicant</option>
+            <option value="recruiter">Recruiter</option>
+          </select>
+        </div>
+        <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
           Register
         </button>
       </form>
