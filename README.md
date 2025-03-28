@@ -1,68 +1,123 @@
-# **Assignment: Full-Stack CRUD Application Development with DevOps Practices**
+# Job Portal System
 
-## **Objective**
+A full-stack CRUD application for a job portal system built using the MERN (MongoDB, Express, React, Node.js) stack. This project follows DevOps practices, including CI/CD integration using GitHub Actions.
 
-You have been provided with a starter project that includes user authentication using  **Node.js, React.js, and MongoDB**. Your task is to extend this application by implementing **CRUD (Create, Read, Update, Delete) operations** for a real-world application of your choice, while following industry best practices such as:
 
-* **Project Management with JIRA**
-* **Requirement Diagram using SysML**
-* **Version Control using GitHub**
-* **CI/CD Integration for Automated Deployment**
+# Table of Contents
+-   [Project Setup Instructions](#project-setup-instructions)
+    
+-   [CI/CD Pipeline Details](#cicd-pipeline-details)
+    
+-   [Backend Setup](###backend-setup)
+    
+-   [Frontend Setup](#frontend-setup)
+    
+-   [Authentication & Authorization](#authentication-authorization)
+    
+-   [GitHub Version Control & Branching Strategy](#github-version-control-branching-strategy)
 
-## **Requirements**
+## Project Setup Instructions
 
-### **1. Choose a Real-World Application**
+Prerequisites
 
-Select a meaningful use case for your CRUD operations. We will provide the list, you have to select it.
+-   **Node.js**: Install the latest version of Node.js from [here](https://nodejs.org/).
+    
+-   **MongoDB**: Make sure you have a MongoDB instance running. You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for cloud hosting or set up MongoDB locally.
+    
+-   **Git**: Install Git from [here](https://git-scm.com/).
+### 1. Clone the repository
 
-### **2. Project Management with JIRA and SysML**
+`git clone https://github.com/yourusername/job-portal-system.git`
 
-* Create a **JIRA project** and define:
-  * **Epic**
-  * **User Stories** (features required in your app)
-  * **Child issues & Subtasks** (breaking down development work)
-  * **Sprint Planning** (organizing work into milestones)
-* Document your JIRA **board URL** in the project README.
-* Draw a requirements diagram
+`cd job-portal-system`
 
-### **3. Backend Development (Node.js + Express + MongoDB)**
+### 2. Backend Setup
+Navigate to the `backend` directory and install the dependencies.
 
-* Create a user-friendly interface to interact with your API (Some portion developed, follow task manager app)).
-* Implement **forms** for adding and updating records.
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+`cd backend
+npm install`
 
-### **4. Frontend Development (React.js)**
 
-* Create a user-friendly interface to interact with your API (**Some portion developed, follow task manager app)**.
-* Implement **forms** for adding, showing, deleting and updating records (CRUD).
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+### 3. Frontend Setup
 
-### **5. Authentication & Authorization**
+Navigate to the `frontend` directory and install the dependencies.
 
-* Ensure **only authenticated users** can access and perform CRUD operations. (Already developed in your project)
-* Use **JWT (JSON Web Tokens)** for user authentication (Use the task manager one from .env file).
+`cd frontend`
+`npm install`
+### 4. Environment Variables
 
-### **6. GitHub Version Control & Branching Strategy**
+Create a `.env` file in the `backend` directory and add the following configuration:
 
-* Use **GitHub for version control** and maintain:
-  * `main` branch (stable production-ready code)
-  * Feature branches (`feature/xyz`) for each new functionality
-* Follow proper **commit messages** and  **pull request (PR) reviews** .
 
-### **7. CI/CD Pipeline Setup**
+`PORT=5000
+MONGO_URI=<Your MongoDB URI>`
+`JWT_SECRET=<Your JWT Secret>`
+### 5. Running the Application
 
-* Implement a **CI/CD pipeline using GitHub Actions** to:
-  * Automatically **run tests** on every commit/pull request (Optional).
-  * Deploy the **backend** to **AWS** .
-  * Deploy the **frontend** to **AWS**.
-* Document your  **CI/CD workflow in the README** .
+To run both the backend and frontend simultaneously in development mode, you can use `concurrently`:
 
-## **Submission Requirements**
+`cd backend`
+`npm run dev`
 
-* **JIRA Project Board URL** (user stories ).
-* **Requirment diagram** (Using project features)
-* **GitHub Repository** (`backend/` and `frontend/`).
-* **README.md** with:
+For the frontend:
 
-  * Project setup instructions.
-  * CI/CD pipeline details.
+`cd frontend`
+`npm start`
+### 6. Testing the Application
+
+The backend tests can be run using:
+
+`cd backend`
+`npm test` 
+
+## CI/CD Pipeline Details
+
+
+### GitHub Actions
+
+This project is integrated with **GitHub Actions** for Continuous Integration and Continuous Deployment. Here's a brief overview of the pipeline setup:
+
+1.  **Continuous Integration**:
+    
+    -   Runs unit tests on every commit or pull request to ensure the code is stable.
+        
+        
+2.  **Continuous Deployment**:
+    
+    -   Deploys the backend to **AWS EC2** automatically when changes are merged into the `main` branch.
+        
+    -  Deploys the frontend to **AWS EC2** automatically on changes to the `main` branch.
+   
+## Backend Setup
+
+The backend is built using **Node.js**, **Express**, and **MongoDB**. It exposes RESTful APIs for user authentication, job posting, and job search. The server is set up with JWT authentication for secure access.
+
+## Frontend Setup
+
+The frontend is built using **React.js**. It interacts with the backend API and displays job listings in a user-friendly interface. It includes forms for adding, updating, and deleting job listings. It also features job application management.
+
+## Authentication & Authorization
+
+The application uses **JWT (JSON Web Tokens)** for user authentication and authorization. Users must be authenticated to perform any CRUD operations.
+
+### Authentication Flow:
+
+-   User logs in via the login form.
+    
+-   Upon successful login, a JWT token is returned.
+    
+-   The token is stored in local storage and sent in the `Authorization` header for protected API requests.
+
+## GitHub Version Control & Branching Strategy
+
+### Branching Strategy:
+
+-   **main**: Stable, production-ready code.
+    
+-   **feature**: Each new feature is developed in its own branch.
+   
+### Pull Requests:
+
+-   Create a pull request from a feature branch to `main`.
+    
+-   Review and approval process before merging into `main`.
