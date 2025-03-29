@@ -8,13 +8,13 @@ A full-stack CRUD application for a job portal system built using the MERN (Mong
     
 -   [CI/CD Pipeline Details](#cicd-pipeline-details)
     
--   [Backend Setup](###backend-setup)
+-   [Backend Setup](#backend-setup)
     
 -   [Frontend Setup](#frontend-setup)
     
--   [Authentication & Authorization](#authentication-authorization)
+-   [Authentication & Authorization](#authentication--authorization)
     
--   [GitHub Version Control & Branching Strategy](#github-version-control-branching-strategy)
+-   [GitHub Version Control & Branching Strategy](#github-version-control--branching-strategy)
 
 ## Project Setup Instructions
 
@@ -31,14 +31,14 @@ Prerequisites
 
 `cd job-portal-system`
 
-### 2. Backend Setup
+### 2. Backend Setup (Project Setup)
 Navigate to the `backend` directory and install the dependencies.
 
 `cd backend
 npm install`
 
 
-### 3. Frontend Setup
+### 3. Frontend Setup (Project Setup)
 
 Navigate to the `frontend` directory and install the dependencies.
 
