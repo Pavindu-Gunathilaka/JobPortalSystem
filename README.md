@@ -52,8 +52,8 @@ Navigate to the `frontend` directory and install the dependencies.
 Create a `.env` file in the `backend` directory and add the following configuration:
 
 
-`PORT=5001'
-'MONGO_URI=<Your MongoDB URI>`
+`PORT=5001`
+`MONGO_URI=<Your MongoDB URI>`
 `JWT_SECRET=<Your JWT Secret>`
 
 ### 5. Running the Application
@@ -98,7 +98,7 @@ This project is integrated with **GitHub Actions** for Continuous Integration an
    
 ## Backend Setup
 
-The backend is built using **Node.js**, **Express**, and **MongoDB**. It exposes RESTful APIs for user authentication, job posting, and job search. The server is set up with JWT authentication for secure access.
+The backend is built using **Node.js**, **Express**, and **MongoDB**. It exposes RESTful APIs for user authentication, job posting, and job application management. The server is set up with JWT authentication for secure access.
 
 ## Frontend Setup
 
