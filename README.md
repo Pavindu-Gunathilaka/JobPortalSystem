@@ -34,8 +34,9 @@ Prerequisites
 ### 2. Backend Setup (Project Setup)
 Navigate to the `backend` directory and install the dependencies.
 
-`cd backend
-npm install`
+`cd backend`
+
+`npm install`
 
 
 ### 3. Frontend Setup (Project Setup)
@@ -43,31 +44,38 @@ npm install`
 Navigate to the `frontend` directory and install the dependencies.
 
 `cd frontend`
+
 `npm install`
+
 ### 4. Environment Variables
 
 Create a `.env` file in the `backend` directory and add the following configuration:
 
 
-`PORT=5000
-MONGO_URI=<Your MongoDB URI>`
+`PORT=5001'
+'MONGO_URI=<Your MongoDB URI>`
 `JWT_SECRET=<Your JWT Secret>`
+
 ### 5. Running the Application
 
 To run both the backend and frontend simultaneously in development mode, you can use `concurrently`:
 
 `cd backend`
+
 `npm run dev`
 
 For the frontend:
 
 `cd frontend`
+
 `npm start`
+
 ### 6. Testing the Application
 
 The backend tests can be run using:
 
 `cd backend`
+
 `npm test` 
 
 ## CI/CD Pipeline Details
